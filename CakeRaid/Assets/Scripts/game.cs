@@ -3,6 +3,12 @@ using System.Collections;
 
 public class game : MonoBehaviour {
 	//GameObject cursor;
+
+	public enum states
+	{
+
+	}
+
 	// Use this for initialization
 	void Start () {
 		//cursor = GameObject.FindWithTag("cursor");
@@ -13,7 +19,7 @@ public class game : MonoBehaviour {
 		
 	}
 
-	Texture2D cursorTexture = Resources.Load<Texture2D>("Cursor");
+	/*Texture2D cursorTexture = Resources.Load<Texture2D>("Cursor");
 	CursorMode cursorMode = CursorMode.Auto;
 	Vector2 hotSpot = Vector2.zero;
 	void OnMouseEnter () {
@@ -21,5 +27,5 @@ public class game : MonoBehaviour {
 	}
 	void OnMouseExit () {
 		Cursor.SetCursor(null, Vector2.zero, cursorMode);
-	}
+	}*/
 }
