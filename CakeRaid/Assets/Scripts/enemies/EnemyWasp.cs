@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace CakeRaid{
-	public class Button : MonoBehaviour {
+namespace CakeRaid {
+	public class EnemyWasp : MonoBehaviour {
+
 		// Use this for initialization
 		void Start () {
 		
@@ -11,10 +12,6 @@ namespace CakeRaid{
 		// Update is called once per frame
 		void Update () {
 		
-		}
-
-		void OnMouseDown(){
-			Application.LoadLevel("level1");
 		}
 	}
 }
