@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 namespace CakeRaid {
-	abstract class Tower /*: GameObject*/{
+	abstract class Tower : Entity{
 
 		protected bool canFire;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace CakeRaid {
-	abstract class Enemy /*: GameObject*/ {
+	abstract class Enemy : Entity {
 
 		protected bool hasCake, adjacentToCake;
 		protected float slowEffect, attackRange;
