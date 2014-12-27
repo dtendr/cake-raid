@@ -14,10 +14,26 @@ namespace CakeRaid {
 
 		//Enemy enumerations
 		public enum EnemyType { Ant, Spider, Beetle, Bee, Wasp, Dragonfly, Ladybug, SpiderBoss }
+		public enum EnemyState { Spawn, FollowPath, MoveToTower, MoveFromTower, AttackTower, AttackTrap, Death, Despawn }
 		public enum StatusType { Slowed, Shocked, Healing, Attracted }
-		public enum BehaviorState { Spawn, FollowPath, MoveToTower, MoveFromTower, AttackTower, AttackTrap, Death, Despawn }
 
+		//Tower enumeration
+		public enum TowerState { Fire, Search, Wait, Upgrade }
+		
 		#endregion Enumerations
+
+		//Starting values for game loop
+		public static int MAX_CAKE_HEALTH = 5 /*base is 5*/, START_MONEY = 850; /*base is 850*/
+
+		#region Tower
+
+		//Tower health values
+		public static int RAD_TOWER_HEALTH = 400;
+		public static int SHOCK_TOWER_HEALTH = 800;
+		public static int FIREBALL_TOWER_HEALTH = 800;
+		public static int LIGHT_TOWER_HEALTH = 1200;
+
+		#endregion Tower
 
 		#region Enemy
 

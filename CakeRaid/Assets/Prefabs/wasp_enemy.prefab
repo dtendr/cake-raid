@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 483440}
   - 212: {fileID: 21283440}
   - 61: {fileID: 6183440}
+  - 114: {fileID: 11456624}
   m_Layer: 0
   m_Name: wasp_enemy
   m_TagString: Untagged
@@ -40,6 +41,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11456624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7749fc26504c3a4e93f52da0adde082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21283440
 SpriteRenderer:
   m_ObjectHideFlags: 1

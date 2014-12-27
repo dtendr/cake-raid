@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace CakeRaid {
-	public class Enemy /*: GameObject*/ {
+	abstract class Enemy /*: GameObject*/ {
 
 		protected bool hasCake, adjacentToCake;
 		protected float slowEffect, attackRange;
@@ -11,7 +11,7 @@ namespace CakeRaid {
 		//slowed, shocked, healing, and attracted
 		protected List<bool> status_effects;
 
-		public Constants.BehaviorState behavior;
+		public Constants.EnemyState behavior;
 
 		public Enemy(){
 
