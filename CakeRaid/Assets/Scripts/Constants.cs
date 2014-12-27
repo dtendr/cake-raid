@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 namespace CakeRaid{
-	public class Var {
+	class Constants {
 
 		#region Enumerations
 
@@ -14,7 +14,7 @@ namespace CakeRaid{
 
 		//Enemy enumerations
 		public enum EnemyType { Ant, Spider, Beetle, Bee, Wasp, Dragonfly, Ladybug, SpiderBoss }
-		public enum StatusType {Slowed, Shocked, Healing, Attracted}
+		public enum StatusType { Slowed, Shocked, Healing, Attracted }
 		public enum BehaviorState { Spawn, FollowPath, MoveToTower, MoveFromTower, AttackTower, AttackTrap, Death, Despawn }
 
 		#endregion Enumerations

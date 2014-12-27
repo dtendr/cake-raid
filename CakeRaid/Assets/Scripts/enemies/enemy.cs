@@ -11,7 +11,7 @@ namespace CakeRaid {
 		//slowed, shocked, healing, and attracted
 		protected List<bool> status_effects;
 
-		protected BehaviorState behavior;
+		public Constants.BehaviorState behavior;
 
 		public Enemy(){
 

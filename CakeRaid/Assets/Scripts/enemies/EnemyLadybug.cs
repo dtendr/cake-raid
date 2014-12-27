@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemyLadybug : MonoBehaviour {
+namespace CakeRaid {
+	public class EnemyLadybug : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		// Use this for initialization
+		void Start () {
+		
+		}
+		
+		// Update is called once per frame
+		void Update () {
+		
+		}
 	}
 }

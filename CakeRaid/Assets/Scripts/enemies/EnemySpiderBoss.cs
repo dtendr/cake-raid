@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemySpiderBoss : MonoBehaviour {
+namespace CakeRaid {
+	public class EnemySpiderBoss : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		// Use this for initialization
+		void Start () {
+		
+		}
+		
+		// Update is called once per frame
+		void Update () {
+		
+		}
 	}
 }
