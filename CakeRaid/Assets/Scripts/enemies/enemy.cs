@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace CakeRaid {
-	public class Enemy : MonoBehaviour {
+	public class Enemy /*: GameObject*/ {
 
 		protected bool hasCake, adjacentToCake;
 		protected float slowEffect, attackRange;

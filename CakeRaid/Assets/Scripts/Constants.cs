@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
-namespace CakeRaid{
-	class Constants {
+namespace CakeRaid {
+	public class Constants {
 
 		#region Enumerations
 
