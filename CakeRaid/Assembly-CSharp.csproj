@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Cake.cs" />
      <Compile Include="Assets\Scripts\Constants.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\Towers\Tower.cs" />
@@ -63,7 +64,6 @@
      <Compile Include="Assets\Scripts\enemies\EnemySpiderBoss.cs" />
      <Compile Include="Assets\Scripts\enemies\EnemyWasp.cs" />
      <Compile Include="Assets\Scripts\enemies\enemy.cs" />
-     <Compile Include="Assets\Scripts\game.cs" />
      <None Include="Assets\Sounds\Credits.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

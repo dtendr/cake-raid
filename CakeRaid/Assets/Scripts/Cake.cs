@@ -2,27 +2,33 @@
 using System.Collections;
 
 namespace CakeRaid{
-	public class Game : MonoBehaviour {
+	public class Cake : MonoBehaviour {
 		//GameObject cursor;
+
+		public Texture2D cursorTexture;
+		public CursorMode cursorMode;
+		public Vector2 hotSpot;
 
 		// Use this for initialization
 		void Start () {
-			//cursor = GameObject.FindWithTag("cursor");
+			cursorTexture = Resources.Load<Texture2D>("Textures/Cursor");
+			cursorMode = CursorMode.Auto;
+			hotSpot = Vector2.zero;
+
+
 		}
 		
 		// Update is called once per frame
 		void Update () {
 			
 		}
-
-		/*Texture2D cursorTexture = Resources.Load<Texture2D>("Cursor");
-		CursorMode cursorMode = CursorMode.Auto;
-		Vector2 hotSpot = Vector2.zero;
+			
 		void OnMouseEnter () {
 			Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
 		}
+
 		void OnMouseExit () {
 			Cursor.SetCursor(null, Vector2.zero, cursorMode);
-		}*/
+		}
 	}
 }
