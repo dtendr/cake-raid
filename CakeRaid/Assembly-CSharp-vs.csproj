@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Cake.cs" />
      <Compile Include="Assets\Scripts\Constants.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
+     <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\Towers\Tower.cs" />
      <Compile Include="Assets\Scripts\Traps\Trap.cs" />
      <Compile Include="Assets\Scripts\Traps\TrapAcid.cs" />

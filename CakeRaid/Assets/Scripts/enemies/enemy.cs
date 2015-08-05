@@ -14,6 +14,10 @@ namespace CakeRaid {
 		public Constants.EnemyState behavior;
 
 		public Enemy(){
+			this.behavior = Constants.EnemyState.Spawn;
+
+
+
 
 		}
 	}
