@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
-namespace CakeRaid {
-	public class Entity {
+namespace CakeRaid
+{
+	public abstract class Entity : MonoBehaviour
+    {
 
 		private bool isActive;
 		private int startHealth, currHealth, damage;

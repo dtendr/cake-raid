@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace CakeRaid {
-	public class EnemyWasp : MonoBehaviour {
-
-		// Use this for initialization
-		void Start () {
+namespace CakeRaid
+{
+	public class EnemyWasp : Enemy
+    {
+        // Use this for initialization
+        void Start () {
 		
 		}
 		

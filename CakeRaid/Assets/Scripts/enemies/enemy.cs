@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
-namespace CakeRaid {
-	abstract class Enemy : Entity {
+namespace CakeRaid
+{
+	public abstract class Enemy : Entity
+    {
 
 		protected bool hasCake, adjacentToCake;
 		protected float slowEffect, attackRange;
@@ -13,12 +16,33 @@ namespace CakeRaid {
 
 		public Constants.EnemyState behavior;
 
-		public Enemy(){
-			this.behavior = Constants.EnemyState.Spawn;
+
+        private int destPoint = 0;
+
+        private Transform eTransform;
+        Vector2 pos;
 
 
+        // Use this for initialization
+        void Awake()
+        {
+            this.behavior = Constants.EnemyState.Spawn;
+
+            this.hasCake = false;
+            this.adjacentToCake = false;
+
+            this.slowEffect = 1.0f;
+            this.attackRange = 1.0f;
+        }
+
+        void MovetoNextNode()
+        {
+           // if (points.Length == 0)
+            //    return;
 
 
-		}
+           // Vector2 dir = target.pos - this.pos;
+            //Vector2.Distance() 
+        }
 	}
 }

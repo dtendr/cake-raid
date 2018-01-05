@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 
-namespace CakeRaid {
-	public class Constants {
+namespace CakeRaid
+{
+	public class Constants
+    {
 
 		#region Enumerations
 
@@ -24,6 +26,8 @@ namespace CakeRaid {
 
 		//Starting values for game loop
 		public static int MAX_CAKE_HEALTH = 5 /*base is 5*/, START_MONEY = 850; /*base is 850*/
+
+        public static int MAX_WAVES = 5, MAX_LEVELS = 3;
 
 		#region Tower
 

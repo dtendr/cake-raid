@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace CakeRaid{
-	public class Cake : MonoBehaviour {
+namespace CakeRaid
+{
+	public class Cake : MonoBehaviour
+    {
+        // Use this for initialization
+        void Awake()
+        {
 
-		// Use this for initialization
-		void Start () {
+        }
 
-		}
-		
-		// Update is called once per frame
-		void Update () {
-			
-		}
-	}
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+    }
 }

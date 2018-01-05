@@ -1,14 +1,26 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
-namespace CakeRaid {
-	abstract class Tower : Entity{
-
+namespace CakeRaid
+{
+	abstract class Tower : Entity
+    {
 		protected bool canFire;
 
 		public Constants.TowerState behavior;
 
-		public Tower(){
+        // Use this for initialization
+        void Awake()
+        {
+            this.behavior = Constants.TowerState.Wait;
 
+            this.canFire = false;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
 		}
 	}
 }

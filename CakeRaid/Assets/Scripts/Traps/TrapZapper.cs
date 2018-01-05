@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace CakeRaid {
-	public class TrapZapper : MonoBehaviour {
-
+namespace CakeRaid
+{
+	public class TrapZapper : MonoBehaviour
+    {
 		// Use this for initialization
 		void Start () {
 		

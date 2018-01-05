@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace CakeRaid
 {
-	public class TrapSnare : MonoBehaviour
+    public class NavNode : MonoBehaviour
     {
         // Use this for initialization
         void Awake()

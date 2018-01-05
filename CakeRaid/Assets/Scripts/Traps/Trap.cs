@@ -1,11 +1,25 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
-namespace CakeRaid {
-	public abstract class Trap : Entity{
+namespace CakeRaid
+{
+	public abstract class Trap : MonoBehaviour
+    {
+        // Use this for initialization
+        void Awake()
+        {
 
+        }
 
-		public Trap(){
+        void Start()
+        {
 
-		}
-	}
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+    }
 }
