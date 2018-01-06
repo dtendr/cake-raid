@@ -15,13 +15,15 @@ namespace CakeRaid
 		protected List<bool> status_effects;
 
 		public Constants.EnemyState behavior;
-
-
+        
         private int destPoint = 0;
 
         private Transform eTransform;
         Vector2 pos;
+        Vector2 target;
 
+        private float moveTimeTotal;
+        private float moveTimeCurrent;
 
         // Use this for initialization
         void Awake()
@@ -35,13 +37,22 @@ namespace CakeRaid
             this.attackRange = 1.0f;
         }
 
-        void MovetoNextNode()
+        public void MovetoNextNode()
         {
            // if (points.Length == 0)
             //    return;
 
 
-           // Vector2 dir = target.pos - this.pos;
+            Vector2 dir = target - this.pos;
+
+            if (moveTimeCurrent < moveTimeTotal) {
+                moveTimeCurrent += Time.deltaTime;
+                if(moveTimeCurrent > moveTimeTotal)
+                {
+                    moveTimeCurrent = moveTimeTotal;
+                }
+                this.transform.position = Vector2.Lerp(target, this.pos, moveTimeCurrent / moveTimeTotal);
+            }
             //Vector2.Distance() 
         }
 	}

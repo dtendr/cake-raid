@@ -51,6 +51,8 @@ namespace CakeRaid
         // Use this for initialization
         void Start()
         {
+            instance.curWaveData = Levels.levels[instance.level];
+
             insEnemies = new List<Enemy>();
 
             Instantiate(cakeObj, new Vector3(0, 4, 0), Quaternion.identity);
@@ -66,15 +68,31 @@ namespace CakeRaid
         // Update is called once per frame
         void Update()
         {
-            //if () {
+            //split waves
+            string spt = instance.curWaveData.Split('+')[instance.wave - 1];
 
+            //split types
+            string[] spt2 = spt.Split('-');
+
+            for (int i=0;i<spt2.Length; i+=2)
+            {
                 Vector3 s = GameObject.Find("spawn").transform.position;
 
-                GameObject temp = Instantiate(enemies[0], s, Quaternion.identity);
+                GameObject temp;
 
-                insEnemies.Add(temp.GetComponent<Enemy>());
-            
-            //}
+                switch (spt2[i])
+                {
+                    case "ant":
+                        temp = Instantiate(enemies[0], s, Quaternion.identity);
+                        insEnemies.Add(temp.GetComponent<Enemy>());
+                        break;
+
+
+
+
+
+                }
+            }
 
             if ((insEnemies.Count == 0) && (wave == Constants.MAX_WAVES) && (level != Constants.MAX_LEVELS))
             {
