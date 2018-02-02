@@ -20,10 +20,12 @@ namespace CakeRaid
 
         private Transform eTransform;
         Vector2 pos;
-        Vector2 target;
 
-        private float moveTimeTotal;
-        private float moveTimeCurrent;
+        //point list for pathing
+        public List<Vector2> points;
+
+        private int currentNode = 0;
+        private float lastNodeSwitchTime = 0;
 
         // Use this for initialization
         void Awake()
@@ -35,25 +37,51 @@ namespace CakeRaid
 
             this.slowEffect = 1.0f;
             this.attackRange = 1.0f;
+
+            // Instantiate nodes for pathfinding
+            GameObject[] nodes = GameObject.FindGameObjectsWithTag("node");
+            this.points = new List<Vector2>();
+
+            // Populate points from tagged gameobjects in Scene
+            foreach (GameObject node in nodes)
+            {
+                Vector2 t = new Vector2(node.transform.position.x, node.transform.position.y);
+                this.points.Add(t);
+            }
+            
+            // Store initial position as a vector2 for quick internal reference
+            this.pos = new Vector2(transform.position.x, transform.position.y);
         }
 
         public void MovetoNextNode()
         {
-           // if (points.Length == 0)
-            //    return;
+            // Gather start and end points from points list
+            Vector2 startPosition = points[currentNode];
+            Vector2 endPosition = points[currentNode + 1];
+            
+            // Calculate path length and timings
+            float pathLength = Vector2.Distance(startPosition, endPosition);
+            float totalTimeForPath = pathLength / this.Speed;
+            float currentTimeOnPath = Time.time - lastNodeSwitchTime;
 
+            // Lerp and update object position
+            gameObject.transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
 
-            Vector2 dir = target - this.pos;
+            // Update internal vector2 quick reference
+            this.pos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
-            if (moveTimeCurrent < moveTimeTotal) {
-                moveTimeCurrent += Time.deltaTime;
-                if(moveTimeCurrent > moveTimeTotal)
+            if (this.pos.Equals(endPosition))
+            {
+                if (currentNode < points.Count - 2)
                 {
-                    moveTimeCurrent = moveTimeTotal;
+                    currentNode++;
+                    lastNodeSwitchTime = Time.time;
                 }
-                this.transform.position = Vector2.Lerp(target, this.pos, moveTimeCurrent / moveTimeTotal);
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
-            //Vector2.Distance() 
         }
 	}
 }

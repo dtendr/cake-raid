@@ -8,13 +8,13 @@ namespace CakeRaid
         // Use this for initialization
         void Start()
         {
-
+            this.Speed = Constants.ANT_SPEED;
         }
 
         // Update is called once per frame
         void Update()
         {
-           // this.MovetoNextNode();
+            this.MovetoNextNode();
         }
     }
 }

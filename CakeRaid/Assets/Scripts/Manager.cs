@@ -35,7 +35,7 @@ namespace CakeRaid
         private List<Enemy> insEnemies;
 
         //point list for pathing
-        public Vector2[] points;
+        //public List<Vector2> points;
 
         void Awake()
         {
@@ -76,6 +76,8 @@ namespace CakeRaid
 
             for (int i=0;i<spt2.Length; i+=2)
             {
+                //pulled separately from points since points should consist of future targets
+                //basically saves an extra step of immediately popping it off the List
                 Vector3 s = GameObject.Find("spawn").transform.position;
 
                 GameObject temp;
@@ -92,6 +94,8 @@ namespace CakeRaid
 
 
                 }
+
+
             }
 
             if ((insEnemies.Count == 0) && (wave == Constants.MAX_WAVES) && (level != Constants.MAX_LEVELS))
