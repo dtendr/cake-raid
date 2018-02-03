@@ -45,7 +45,7 @@ namespace CakeRaid
 
 		//Ant
 		public static int ANT_HEALTH = 10, ANT_DAMAGE = 1;
-        public static float ANT_SPEED = 5.0f; //1.6f;
+        public static float ANT_SPEED = 1.6f;
 
 		//Spider
 		public static int SPIDER_HEALTH = 25, SPIDER_DAMAGE = 2;

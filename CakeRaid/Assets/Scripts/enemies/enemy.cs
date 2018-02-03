@@ -42,8 +42,14 @@ namespace CakeRaid
             GameObject[] nodes = GameObject.FindGameObjectsWithTag("node");
             this.points = new List<Vector2>();
 
+            GameObject[] sortedNodes = new GameObject[nodes.Length];
+            foreach(GameObject node in nodes)
+            {
+                sortedNodes[int.Parse(node.name.Split('_')[1])] = node;
+            }
+
             // Populate points from tagged gameobjects in Scene
-            foreach (GameObject node in nodes)
+            foreach (GameObject node in sortedNodes)
             {
                 Vector2 t = new Vector2(node.transform.position.x, node.transform.position.y);
                 this.points.Add(t);
@@ -58,12 +64,13 @@ namespace CakeRaid
             // Gather start and end points from points list
             Vector2 startPosition = points[currentNode];
             Vector2 endPosition = points[currentNode + 1];
-            
+            Vector3 dir = (endPosition - startPosition);
+
             // Calculate path length and timings
             float pathLength = Vector2.Distance(startPosition, endPosition);
             float totalTimeForPath = pathLength / this.Speed;
             float currentTimeOnPath = Time.time - lastNodeSwitchTime;
-
+            
             // Lerp and update object position
             gameObject.transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
 
@@ -76,6 +83,10 @@ namespace CakeRaid
                 {
                     currentNode++;
                     lastNodeSwitchTime = Time.time;
+
+                    //update facing direction
+                    float rotationAngle = Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
+                    transform.Rotate(Vector3.forward * rotationAngle);
                 }
                 else
                 {

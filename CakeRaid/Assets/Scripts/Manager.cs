@@ -63,10 +63,20 @@ namespace CakeRaid
             cashText.text = "$" + cash;
             cakeText.text = "Cake: " + cake;
             waveText.text = "Wave: " + wave + "/" + maxWave;
+
+            instance.SpawnEnemies();
         }
 
         // Update is called once per frame
         void Update()
+        {
+            if ((insEnemies.Count == 0) && (wave == Constants.MAX_WAVES) && (level != Constants.MAX_LEVELS))
+            {
+                this.LevelComplete();
+            }
+        }
+
+        void SpawnEnemies()
         {
             //split waves
             string spt = instance.curWaveData.Split('+')[instance.wave - 1];
@@ -74,11 +84,11 @@ namespace CakeRaid
             //split types
             string[] spt2 = spt.Split('-');
 
-            for (int i=0;i<spt2.Length; i+=2)
+            for (int i = 0; i < spt2.Length; i += 2)
             {
                 //pulled separately from points since points should consist of future targets
                 //basically saves an extra step of immediately popping it off the List
-                Vector3 s = GameObject.Find("spawn").transform.position;
+                Vector3 s = GameObject.Find("spawn_0").transform.position;
 
                 GameObject temp;
 
@@ -88,33 +98,12 @@ namespace CakeRaid
                         temp = Instantiate(enemies[0], s, Quaternion.identity);
                         insEnemies.Add(temp.GetComponent<Enemy>());
                         break;
-
-
-
-
-
+                        
                 }
 
-
+                break;
             }
-
-            if ((insEnemies.Count == 0) && (wave == Constants.MAX_WAVES) && (level != Constants.MAX_LEVELS))
-            {
-                this.LevelComplete();
-            }
-
-            //update enemy positions
-
             
-
-            //grab previously loaded enemy (at end of stack)
-            if (insEnemies.Count > 0)
-            {
-                //if(insEnemies[insEnemies.Length - 1].
-            }
-
-
-
         }
 
         public void LevelComplete()
@@ -129,6 +118,8 @@ namespace CakeRaid
             {
                 g.SetActive(false);
             }
+
+            instance.SpawnEnemies();
         }
     }
 }
