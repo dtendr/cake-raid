@@ -15,8 +15,6 @@ namespace CakeRaid
 		protected List<bool> status_effects;
 
 		public Constants.EnemyState behavior;
-        
-        private int destPoint = 0;
 
         private Transform eTransform;
         Vector2 pos;
@@ -26,6 +24,8 @@ namespace CakeRaid
 
         private int currentNode = 0;
         private float lastNodeSwitchTime = 0;
+
+        public float spawnDelay = 10.0f;
 
         // Use this for initialization
         void Awake()
@@ -57,6 +57,7 @@ namespace CakeRaid
             
             // Store initial position as a vector2 for quick internal reference
             this.pos = new Vector2(transform.position.x, transform.position.y);
+            
         }
 
         public void MovetoNextNode()
@@ -90,6 +91,7 @@ namespace CakeRaid
                 }
                 else
                 {
+                    //gameObject.GetComponent<Renderer>().enabled = false;
                     Destroy(gameObject);
                 }
             }

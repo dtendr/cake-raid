@@ -14,6 +14,10 @@ namespace CakeRaid
                 ""
             };
 
+        public static int[] waveTotals =
+            {
+                5, 10, 15, 25, 29
+            };
 
         #endregion Level1
     }

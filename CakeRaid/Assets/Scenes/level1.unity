@@ -1583,7 +1583,7 @@ Prefab:
         type: 2}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 152330, guid: bfd1e040beeb7544fa48a7affcea36b1, type: 2}
+      objectReference: {fileID: 100630, guid: 38217863806d48b429c7fad4346dc0f5, type: 2}
     - target: {fileID: 114903095858949254, guid: b41cf1480d574ed4a94425b59ec67a19,
         type: 2}
       propertyPath: enemies.Array.data[2]
@@ -1593,7 +1593,7 @@ Prefab:
         type: 2}
       propertyPath: enemies.Array.data[3]
       value: 
-      objectReference: {fileID: 100630, guid: 38217863806d48b429c7fad4346dc0f5, type: 2}
+      objectReference: {fileID: 152330, guid: bfd1e040beeb7544fa48a7affcea36b1, type: 2}
     - target: {fileID: 114903095858949254, guid: b41cf1480d574ed4a94425b59ec67a19,
         type: 2}
       propertyPath: enemies.Array.data[4]
