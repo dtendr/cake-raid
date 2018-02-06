@@ -6,7 +6,6 @@ A tower defense game where you defend cake from invading bugs!
 
 ### Prerequisites
 
-## Deployment
 
 ## Built With
 
