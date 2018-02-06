@@ -24,15 +24,21 @@ namespace CakeRaid
         public Text cakeText;
         public Text waveText;
 
+        public GameObject tower1butt;
+
         public GameObject cakeObj;
 
-        //enemy gameobj type references
+        //enemy, tower, and trap gameobj type references
         public GameObject[] enemies;
+        public GameObject[] towers;
+        public GameObject[] traps;
 
         private string curWaveData;
 
-        //instanced enemies
+        //instanced enemies, towers, traps
         private List<Enemy> insEnemies;
+        private List<Tower> insTowers;
+        private List<Trap> insTraps;
 
         private int enemiesSpawned = 0;
 
@@ -43,6 +49,8 @@ namespace CakeRaid
         string[] spt2;
         
         int enemyInd = 0;
+
+        bool towerSelected = false;
 
         void Awake()
         {
@@ -61,6 +69,8 @@ namespace CakeRaid
             instance.curWaveData = Levels.levels[instance.level];
 
             insEnemies = new List<Enemy>();
+            insTowers = new List<Tower>();
+            insTraps = new List<Trap>();
 
             Instantiate(cakeObj, new Vector3(0, 4, 0), Quaternion.identity);
 
@@ -70,6 +80,9 @@ namespace CakeRaid
             instance.UpdateSplit();
 
             lastSpawnTime = Time.time;
+
+            tower1butt.GetComponent<Button>().onClick.AddListener(SelectTower);
+
         }
 
         // Update is called once per frame
@@ -81,6 +94,11 @@ namespace CakeRaid
             waveText.text = "Wave: " + wave + "/" + maxWave;
 
             //instance.SpawnEnemy(0);
+
+            if (Input.GetMouseButtonDown(0) && towerSelected)
+            {
+                instance.SpawnTower("rad");
+            }
 
             if (instance.wave < instance.maxWave)
             {
@@ -167,6 +185,27 @@ namespace CakeRaid
                     temp = Instantiate(enemies[2], s, Quaternion.identity);
                     insEnemies.Add(temp.GetComponent<Enemy>());
                     break;
+            }
+        }
+
+        public void SelectTower()
+        {
+
+            towerSelected = true;
+        }
+
+        public void SpawnTower(string type)
+        {
+            if (towerSelected)
+            {
+                GameObject temp;
+                switch (type)
+                {
+                    case "rad":
+                        temp = Instantiate(towers[0], Input.mousePosition, Quaternion.identity);
+                        insTowers.Add(temp.GetComponent<Tower>());
+                        break;
+                }
             }
         }
 

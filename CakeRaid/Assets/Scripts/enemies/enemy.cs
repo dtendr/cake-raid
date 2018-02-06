@@ -86,7 +86,7 @@ namespace CakeRaid
                     lastNodeSwitchTime = Time.time;
 
                     //update facing direction
-                    float rotationAngle = Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
+                    float rotationAngle = Mathf.Atan2(dir.x, dir.y) * 90 / Mathf.PI;
                     transform.Rotate(Vector3.forward * rotationAngle);
                 }
                 else

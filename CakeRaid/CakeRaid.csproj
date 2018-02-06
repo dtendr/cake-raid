@@ -82,6 +82,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Cake.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyAnt.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyBee.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyBeetle.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyDragonfly.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyLadybug.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpider.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpiderBoss.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyWasp.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\Levels.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
@@ -92,15 +101,6 @@
     <Compile Include="Assets\Scripts\Traps\TrapFlypaper.cs" />
     <Compile Include="Assets\Scripts\Traps\TrapSnare.cs" />
     <Compile Include="Assets\Scripts\Traps\TrapZapper.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemyAnt.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemyBee.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemyBeetle.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemyDragonfly.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemyLadybug.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemySpider.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemySpiderBoss.cs" />
-    <Compile Include="Assets\Scripts\enemies\EnemyWasp.cs" />
-    <Compile Include="Assets\Scripts\enemies\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sounds\Credits.txt" />
