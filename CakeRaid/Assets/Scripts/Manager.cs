@@ -25,6 +25,9 @@ namespace CakeRaid
         public Text waveText;
 
         public GameObject tower1butt;
+        public GameObject tower2butt;
+        public GameObject tower3butt;
+        public GameObject tower4butt;
 
         public GameObject cakeObj;
 
@@ -50,7 +53,8 @@ namespace CakeRaid
         
         int enemyInd = 0;
 
-        bool towerSelected = false;
+        enum Inventory { None, TRad, TShock, TFire, TLight, TrAcid, TrFlypaper, TrShocker };
+        int selectedItem = (int)Inventory.None;
 
         void Awake()
         {
@@ -81,7 +85,10 @@ namespace CakeRaid
 
             lastSpawnTime = Time.time;
 
-            tower1butt.GetComponent<Button>().onClick.AddListener(SelectTower);
+            tower1butt.GetComponent<Button>().onClick.AddListener(SelectTowerRad);
+            tower2butt.GetComponent<Button>().onClick.AddListener(SelectTowerShock);
+            tower3butt.GetComponent<Button>().onClick.AddListener(SelectTowerFire);
+            tower4butt.GetComponent<Button>().onClick.AddListener(SelectTowerLight);
 
         }
 
@@ -95,9 +102,28 @@ namespace CakeRaid
 
             //instance.SpawnEnemy(0);
 
-            if (Input.GetMouseButtonDown(0) && towerSelected)
+            if (Input.GetMouseButtonDown(0) && selectedItem != (int)Inventory.None)
             {
-                instance.SpawnTower("rad");
+                switch (selectedItem)
+                {
+                    case 1:
+                        instance.SpawnTower("rad");
+                        break;
+
+                    case 2:
+                        instance.SpawnTower("shock");
+                        break;
+
+                    case 3:
+                        instance.SpawnTower("fire");
+                        break;
+
+                    case 4:
+                        instance.SpawnTower("light");
+                        break;
+
+                }
+                
             }
 
             if (instance.wave < instance.maxWave)
@@ -188,24 +214,49 @@ namespace CakeRaid
             }
         }
 
-        public void SelectTower()
+        public void SelectTowerRad()
         {
-
-            towerSelected = true;
+            selectedItem = (int)Inventory.TRad;
+        }
+        public void SelectTowerShock()
+        {
+            selectedItem = (int)Inventory.TShock;
+        }
+        public void SelectTowerFire()
+        {
+            selectedItem = (int)Inventory.TFire;
+        }
+        public void SelectTowerLight()
+        {
+            selectedItem = (int)Inventory.TLight;
         }
 
         public void SpawnTower(string type)
         {
-            if (towerSelected)
+            Vector3 mP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            GameObject temp;
+            switch (type)
             {
-                GameObject temp;
-                switch (type)
-                {
-                    case "rad":
-                        temp = Instantiate(towers[0], Input.mousePosition, Quaternion.identity);
-                        insTowers.Add(temp.GetComponent<Tower>());
-                        break;
-                }
+                case "rad":
+                    temp = Instantiate(towers[0], new Vector3( mP.x, mP.y, 0 ), Quaternion.identity);
+                    insTowers.Add(temp.GetComponent<Tower>());
+                    break;
+
+                case "shock":
+                    temp = Instantiate(towers[1], new Vector3(mP.x, mP.y, 0), Quaternion.identity);
+                    insTowers.Add(temp.GetComponent<Tower>());
+                    break;
+
+                case "fire":
+                    temp = Instantiate(towers[2], new Vector3(mP.x, mP.y, 0), Quaternion.identity);
+                    insTowers.Add(temp.GetComponent<Tower>());
+                    break;
+
+                case "light":
+                    temp = Instantiate(towers[3], new Vector3(mP.x, mP.y, 0), Quaternion.identity);
+                    insTowers.Add(temp.GetComponent<Tower>());
+                    break;
             }
         }
 

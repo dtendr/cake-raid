@@ -96,6 +96,10 @@
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\NavNode.cs" />
     <Compile Include="Assets\Scripts\Towers\Tower.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerFire.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerLight.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerRad.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerShock.cs" />
     <Compile Include="Assets\Scripts\Traps\Trap.cs" />
     <Compile Include="Assets\Scripts\Traps\TrapAcid.cs" />
     <Compile Include="Assets\Scripts\Traps\TrapFlypaper.cs" />

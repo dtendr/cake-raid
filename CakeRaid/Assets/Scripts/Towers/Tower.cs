@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace CakeRaid
 {
-	abstract class Tower : Entity
+	public abstract class Tower : Entity
     {
 		protected bool canFire;
 

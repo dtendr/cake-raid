@@ -2970,12 +2970,27 @@ Prefab:
         type: 2}
       propertyPath: towers.Array.data[3]
       value: 
-      objectReference: {fileID: 193124, guid: c78c4def64f06e648a9fe5dc9623e072, type: 2}
+      objectReference: {fileID: 184794, guid: cd3950f7379a6444a8589850d0b5932c, type: 2}
     - target: {fileID: 114903095858949254, guid: b41cf1480d574ed4a94425b59ec67a19,
         type: 2}
       propertyPath: tower1butt
       value: 
       objectReference: {fileID: 997367312}
+    - target: {fileID: 114903095858949254, guid: b41cf1480d574ed4a94425b59ec67a19,
+        type: 2}
+      propertyPath: tower2butt
+      value: 
+      objectReference: {fileID: 2070411777}
+    - target: {fileID: 114903095858949254, guid: b41cf1480d574ed4a94425b59ec67a19,
+        type: 2}
+      propertyPath: tower3butt
+      value: 
+      objectReference: {fileID: 568590062}
+    - target: {fileID: 114903095858949254, guid: b41cf1480d574ed4a94425b59ec67a19,
+        type: 2}
+      propertyPath: tower4butt
+      value: 
+      objectReference: {fileID: 94170344}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b41cf1480d574ed4a94425b59ec67a19, type: 2}
   m_IsPrefabParent: 0
